@@ -10,9 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_24_132631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "listings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "description"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string "description"
+    t.bigint "listing_id"
+    t.bigint "user_id"
+    t.string "start_date"
+    t.string "end_date"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_offers_on_listing_id"
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "bio"
+    t.string "gender"
+    t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "listings", "users"
+  add_foreign_key "offers", "listings"
+  add_foreign_key "offers", "users"
 end
