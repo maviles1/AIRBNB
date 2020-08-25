@@ -1,8 +1,20 @@
-<h4>All Listings</h4>
+<div class="container">
+  <% @listings.each do %>
+    <% |listing| %>
+    <div class="card-trip">
+      <%= cl_image_tag(listing.img_url.key) %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= listing.title %></h2>
+        <%= link_to "delete", listing_delete_path(listing.id), method: "delete" %>
+        <p><%= listing.description %></p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<% @listings.each do %>
-<% |listing| %>
-<h5><%= listing.title %></h5>
-<% end %>
 
-<%= cl_image_tag("v1598362815/mbjpsxyton5bg29cjsdx3d4xog6j.png") %>
+

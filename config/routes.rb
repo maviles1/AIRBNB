@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'listings/:id', to: "listings#show"
   get 'listings/:id/edit', to: "listings#edit"
   patch 'listings/:id/', to: "listings#update"
+  delete 'listings/:id', to: "listings#destroy", as: "listing_delete"
 
   get 'listings/:id/offers', to: "offers#index"
   get 'listings/:id/offers/new', to: "offers#new"
@@ -19,6 +20,6 @@ Rails.application.routes.draw do
   patch 'listings/:id/offers/offer_id/accept', to: "offers#accept"
   patch 'listings/:id/offers/offer_id/decline', to: "offers#decline"
 
-  get '/users/:id', to: "users#show"
+  get '/users/:id', to: "users#show", as: "profile"
 
 end

@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(strong_params)
     @listing.user = current_user
     if @listing.save
-      redirect_to :root
+      redirect_to listings_path
     else
       render :new
     end
@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
-    redirect_to :root
+    redirect_to listings_path
   end
 
   private
