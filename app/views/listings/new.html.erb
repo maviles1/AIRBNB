@@ -1,0 +1,7 @@
+<%= simple_form_for @listing do |f| %>
+    <%= f.input :title, label: 'Your Boat' %>
+    <%= f.input :description, label: 'What makes your boat awesome' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+<% end %>
+
