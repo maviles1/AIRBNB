@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+.landing-box {
+  height: 600px;
+  background-image: linear-gradient(to right,rgba(black, 0.4), rgba(black, 0.6)), url("https://cutewallpaper.org/21/yacht-backgrounds/Super-Yachts-Wallpapers-Wallpaper-Cave.jpg");
+  background-size: cover;
+  display: flex;
+}
+
+.pitch-text-box {
+  margin: auto;
+  padding: 8%;
+}
+
+.pitch-text {
+  color: white;
+  font-family: 'PT Serif', serif;
+  font-size: 5rem;
+}
+
+.form-box {
+  height: 50px;
+ background-color: white;
+ border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-field {
+  border: none;
+}
+
+.search-btn {
+  background-color: #ee6f57;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.end {}
