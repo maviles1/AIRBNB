@@ -1,7 +1,27 @@
-<h4>All Listings</h4>
 
-<% @listings.each do |listing|%>
-<h5><%= listing.name %></h5>
-<% end %>
+<div class="container">
+  <h4>All Listings</h4>
 
-<%= link_to "new listing", new_listing_path %>
+
+
+  <% @listings.each do |listing|%>
+  <div class="card-trip">
+    <%= cl_image_tag(listing.img_url,
+      width: 400, height: 300, crop: :fill) %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= listing.name %></h2>
+        <p><%= listing.description %></p>
+      </div>
+      <h2 class="card-trip-pricing"></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+
+  <% end %>
+
+  <%= link_to "new listing", new_listing_path %>
+
+</div>
+
