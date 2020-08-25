@@ -8,12 +8,12 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listings = Listing.new()
+    @listing = Listing.new()
   end
 
   def create
     @listing = Listing.new(strong_params)
-    @listing.user = current_users
+    @listing.user = current_user
     if @listing.save
       redirect_to :root
     else

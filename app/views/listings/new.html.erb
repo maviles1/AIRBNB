@@ -1,8 +1,7 @@
-<%= simple_form_for @listing, :html => { :multipart => true } do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.file_format :photo, :label => 'Your beautiful boat' %>
-    <%= f.button :submit,
-                 'Upload File',
-                 class: 'btn' %>
+<%= simple_form_for @listing do |f| %>
+    <%= f.input :title, label: 'Your Boat' %>
+    <%= f.input :description, label: 'What makes your boat awesome' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
 <% end %>
+
