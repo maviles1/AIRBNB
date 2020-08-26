@@ -1,0 +1,88 @@
+
+.offer {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px;
+  border-radius: 15px;
+  padding-left: 20px;
+  .title {
+    padding: 3%;
+  }
+}
+
+
+
+.show-flex-container {
+  display: flex;
+align-content: center;
+}
+
+.show-image-container {
+  display: flex;
+  width: 60%;
+}
+
+.show-info-container {
+  width: 40%;
+}
+
+.show-info-title {
+  vertical-align: baseline;
+  padding: 15px;
+}
+
+.show-info-title h6{
+  margin-bottom: 0;
+}
+
+.show-info-owner-sm {
+  color: grey;
+}
+
+.show-edit {
+  text-align: center;
+}
+
+.resv-container {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+
+.edit-container {
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  .edit-buttons {
+    width: 100%;
+    text-align: center;
+  }
+  .confirm-buttons {
+    width: 100%;
+    text-align: center;
+    color: green;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.end{}
