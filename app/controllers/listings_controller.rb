@@ -1,18 +1,20 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
-
-  end
-
-  def show
-    @listings = Listing.find(params[:id])
     @listings = Listing.geocoded
     @markers = @listings.map do |listing|
       {
         lat: listing.latitude,
         lng: listing.longitude
       }
-      end
+    end
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+    @markers = {
+      lat: @listing.latitude,
+      lng: @listing.longitude
+    }
   end
 
   def new
@@ -49,6 +51,6 @@ class ListingsController < ApplicationController
   private
 
   def strong_params
-    params.require(:listing).permit(:description, :title, img_urls: [])
+    params.require(:listing).permit(:description, :title, :address, img_urls: [])
   end
 end
