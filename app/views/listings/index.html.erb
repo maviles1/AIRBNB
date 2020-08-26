@@ -2,16 +2,22 @@
   <% @listings.each do %>
     <% |listing| %>
     <div class="card-trip">
-      <%= cl_image_tag(listing.img_url.key) %>
+      <%=listing.img_url.attached? ?  cl_image_tag(listing.img_url.key) : image_tag("download.png") %>
     <div class="card-trip-infos">
       <div>
         <h2><%= listing.title %></h2>
+          <p><%= listing.description %></p>
+        <%= link_to "show", listing_path(listing.id) %>
         <%= link_to "delete", listing_delete_path(listing.id), method: "delete" %>
-        <p><%= listing.description %></p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <h2 class="card-trip-pricing"></h2>
+
+      <%= image_tag "logo.png", class: "avatar-bordered", alt: "avatar" %>
     </div>
   </div>
   <% end %>
 </div>
+<%= link_to "new listing", new_listing_path %>
+
+
+

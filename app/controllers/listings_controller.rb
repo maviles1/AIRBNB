@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
   end
 
   def new
+    redirect_to new_user_session_path if current_user == nil
     @listing = Listing.new()
   end
 
