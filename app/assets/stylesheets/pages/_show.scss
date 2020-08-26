@@ -1,0 +1,77 @@
+.title {
+  border: 1px solid red;
+}
+
+.show-flex-container {
+  display: flex;
+  border: 1px solid red;
+align-content: center;
+}
+
+.show-image-container {
+  display: flex;
+  border: 1px solid red;
+  width: 60%;
+}
+
+.show-info-container {
+  border: 1px solid red;
+  width: 40%;
+}
+
+.show-info-title {
+  border: 1px solid red;
+  vertical-align: baseline;
+  padding: 15px;
+}
+
+.show-info-title h6{
+  margin-bottom: 0;
+}
+
+.show-info-owner-sm {
+  color: grey;
+}
+
+.show-edit {
+  text-align: center;
+}
+
+.resv-container {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+
+.edit-container {
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  padding-top: 20px;
+  .edit-buttons {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.end{}
