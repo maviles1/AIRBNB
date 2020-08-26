@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
-  padding-right: 0;
+  padding-right: 5px;
   align-items: center;
   justify-content: center;
 }
@@ -36,9 +36,10 @@
 .search-btn {
   background-color: #ee6f57;
   border: none;
-  height: 50px;
-  width: 100px;
-  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 15px;
 }
 
 .grid-container {
@@ -55,6 +56,13 @@
 
 }
 
+.featured {
+  background-color: #dbe3e5;
+  text-align: center;
+}
 
+.featured-text {
+  padding: 20px;
+}
 
 .end {}
