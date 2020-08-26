@@ -1,12 +1,12 @@
 <div class="landing-box">
     <div class="pitch-text-box">
         <h1 class="pitch-text">Plan your next <br> holiday at sea.</h1>
-        <div class="form-box">
+        <form class="form-box" action=<%= listings_path %>>
             <input class="form-field" type="text" id="fname" name="fname" placeholder="Destination">
             <input class="form-field" type="date" id="checkin" name="lname" placeholder="Check-in Date">
             <input class="form-field" type="date" id="checkout" name="lname" placeholder="Check-out Date">
-            <button class="search-btn">Search</button>
-        </div>
+            <button class="search-btn" href=<%= listings_path %>>Search</button>
+        </form>
     </div>
 </div>
 <%= render "home_carousel" %>
