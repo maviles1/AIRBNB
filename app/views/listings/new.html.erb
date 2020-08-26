@@ -1,6 +1,13 @@
-<%= simple_form_for @listing do |f| %>
-  <%= f.input :title, label: 'Your Boat' %>
-  <%= f.input :description, label: 'What makes your boat awesome' %>
-  <%= f.input :img_url, as: :file %>
-  <%= f.button :submit %>
-  <% end %>
+<html>
+  <div class="container">
+    <div id="new-listing">
+      <%= simple_form_for @listing do |f| %>
+        <%= f.input :title, label: 'Your Boat' %>
+        <%= f.input :description, label: 'What makes your boat awesome' %>
+        <%= f.input :img_url, as: :file %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</html>
+
