@@ -8,6 +8,7 @@
         <a class="btn btn-primary" href='/users/sign_up'>New User</a>
       <% else %>
         <a class="btn btn-primary" href=<%= profile_path(current_user.id) %>>Profile</a>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn bt-primary" %>
       <% end %>
     </div>
 </div>
