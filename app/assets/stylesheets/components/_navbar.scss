@@ -3,6 +3,7 @@
   top: 0; /* Stay on top */
   width: 100%; /* Full width */
   transition: top 1s; /* Transition effect when sliding down (and up) */
+  z-index: 1000;
 }
 ////////ABOVE/////////
 ////GONZALO/NAVBAR////
@@ -43,4 +44,6 @@
 .btn {
   white-space: nowrap;
   margin-right: 5px;
+  background-color: #ee6f57;
+  border: none;
 }
