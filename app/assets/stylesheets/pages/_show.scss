@@ -1,26 +1,33 @@
-.title {
-  border: 1px solid red;
+
+.offer {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px;
+  border-radius: 15px;
+  padding-left: 20px;
+  .title {
+    padding: 3%;
+  }
 }
+
+
 
 .show-flex-container {
   display: flex;
-  border: 1px solid red;
 align-content: center;
 }
 
 .show-image-container {
   display: flex;
-  border: 1px solid red;
   width: 60%;
 }
 
 .show-info-container {
-  border: 1px solid red;
   width: 40%;
 }
 
 .show-info-title {
-  border: 1px solid red;
   vertical-align: baseline;
   padding: 15px;
 }
@@ -50,11 +57,15 @@ align-content: center;
   display: flex;
   // justify-content: center;
   align-items: center;
-  border: 1px solid red;
   padding-top: 20px;
   .edit-buttons {
     width: 100%;
     text-align: center;
+  }
+  .confirm-buttons {
+    width: 100%;
+    text-align: center;
+    color: green;
   }
 }
 
