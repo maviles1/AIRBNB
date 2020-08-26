@@ -1,0 +1,20 @@
+
+#new-listing {
+  display: flex-box;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  height: 560px;
+  width: 400px;
+  margin-top: 100px;
+}
+
+#listing_img_url {
+color: gray;
+}
+
+#new_listing > input.btn {
+  float: right;
+}
