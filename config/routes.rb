@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   patch 'listings/:id/offers/offer_id/decline', to: "offers#decline"
 
   get '/users/:id', to: "users#show", as: "profile"
+  get '/users/:id/edit', to: "users#show", as: "profile_edit"
 
 end
