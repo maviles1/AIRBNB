@@ -3,7 +3,7 @@
     <!-- breathe -->
     <div class="offer">
         <h1 class="title">
-            <%= @listings.title %>, <em>Located in St. Tropez</em>
+            <%= @listing.title %>, <em>Located in St. Tropez</em>
         </h1>
         <div class="show-flex-container">
             <!-- breathe -->
@@ -34,8 +34,8 @@
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Owner name:</h6>
                     <h5 class="show-info-owner">
-                        <%= @listings.user.first_name %>
-                        <%= @listings.user.last_name %>
+                        <%= @listing  .user.first_name %>
+                        <%= @listing  .user.last_name %>
                     </h5>
                 </div>
                 <div class="show-info-title">
@@ -68,5 +68,7 @@
         </div>
         <!-- breathe -->
         <!-- breathe -->
+    </div>
+    <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 </div>

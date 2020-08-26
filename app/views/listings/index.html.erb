@@ -1,24 +1,23 @@
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
 <div class="container">
-  <% @listings.each do %>
+    <% @listings.each do %>
     <% |listing| %>
     <div class="card-trip">
-      <%=listing.img_url.attached? ?  cl_image_tag(listing.img_url[0].key, :width=>630, :height=>200,) : image_tag("download.png") %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= listing.title %></h2>
-          <p><%= listing.description %></p>
-        <%= link_to "show", listing_path(listing.id) %>
-        <%= link_to "delete", listing_delete_path(listing.id), method: "delete" %>
-      </div>
-      <h2 class="card-trip-pricing"></h2>
-        <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+        <%=listing.img_url.attached? ?  cl_image_tag(listing.img_url[0].key, :width=>630, :height=>200,) : image_tag("download.png") %>
+        <div class="card-trip-infos">
+            <div>
+                <h2>
+                    <%= listing.title %>
+                </h2>
+                <p>
+                    <%= listing.description %>
+                </p>
+                <%= link_to "show", listing_path(listing.id) %>
+                <%= link_to "delete", listing_delete_path(listing.id), method: "delete" %>
+            </div>
+            <h2 class="card-trip-pricing"></h2>
+            <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+        </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
 </div>
 <%= link_to "new listing", new_listing_path %>
