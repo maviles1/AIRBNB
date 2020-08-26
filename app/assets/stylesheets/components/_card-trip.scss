@@ -22,7 +22,6 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -36,4 +35,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-header {
+  // font-family: 'PT Serif', serif;
+  color: #797a7e;
 }
