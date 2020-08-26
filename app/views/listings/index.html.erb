@@ -11,8 +11,7 @@
         <%= link_to "delete", listing_delete_path(listing.id), method: "delete" %>
       </div>
       <h2 class="card-trip-pricing"></h2>
-
-      <%= image_tag "logo.png", class: "avatar-bordered", alt: "avatar" %>
+        <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
     </div>
   </div>
   <% end %>
