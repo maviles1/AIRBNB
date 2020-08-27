@@ -36,6 +36,16 @@ class UsersController < ApplicationController
     redirect_to :root
   end
 
+  def show_offers
+    @user = User.find(params[:id])
+    @offers = @user.offers
+  end
+
+  def show_listings
+    @user = User.find(params[:id])
+    @listings = @user.listings
+  end
+
   private
 
   def strong_params
