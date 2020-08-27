@@ -5,7 +5,7 @@
         <%= f.input :title, label: 'Your Boat Name' %>
         <%= f.input :description, as: :text, input_html: {rows: 5}, label: 'Description', placeholder: 'Tell us why your boat is awesome!' %>
         <%= f.input :address, as: :text, label: 'Marina Address', hint: 'Must be moored in a fixed location' %>
-        <%= f.input :img_url, label: 'Photo', as: :file, input_html: { multiple: true } %>
+        <%= f.input :img_urls, label: 'Photo', as: :file, input_html: { multiple: true } %>
         <%= f.button :submit, class: 'btn-primary' %>
       <% end %>
     </div>

@@ -4,8 +4,8 @@ class CreateOffers < ActiveRecord::Migration[6.0]
       t.string :description
       t.references :listing, foreign_key: true
       t.references :user, foreign_key: true
-      t.string :start_date
-      t.string :end_date
+      t.date :start_date
+      t.date :end_date
       t.boolean :status
 
       t.timestamps
