@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'users/:id/offers', to: "users#show_offers", as: "user_offers"
   get 'users/:id/listings', to: "users#show_listings", as: "user_listings"
   get 'listings/:id/offers/new', to: "offers#new", as: "make_offer"
-  post 'listings/:id/offers', to: "offers#create", as: "create_offer"
+  post 'listings/:id/offers', to: "offers#create", as: "offers"
   delete '/listings/:id/offers/:offer_id', to: "offers#destroy"
   get '/offers/:id/edit', to: "offers#edit"
   patch '/offers/:id', to: "offers#update"
