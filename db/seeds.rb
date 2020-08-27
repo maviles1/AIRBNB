@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times  do
-  User.create(
+  User.create!(
+    password:"password",
    username:Faker::GreekPhilosophers.name,
    bio:Faker::University.name,
    gender:Faker::Gender.binary_type,
@@ -14,16 +15,14 @@
    email:Faker::Internet.email,
    first_name:Faker::Name.first_name,
    last_name:Faker::Name.last_name,
-   img_url: "https://source.unsplash.com/collection/1602384"
     )
 end
 
 10.times do
-  Listing.create(
-    user_id:Faker::IDNumber.valid,
+  Listing.create!(
+    user:User.all.sample,
     description:Faker::Vehicle.year,
     title:Faker::Vehicle.make,
-    img_url:"https://source.unsplash.com/collection/4492634",
     address:Faker::Address.street_name,
     latitude:Faker::Address.latitude,
     longitude:Faker::Address.longitude,
