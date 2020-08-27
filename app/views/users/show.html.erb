@@ -1,8 +1,12 @@
 <div class="container">
+  <div id="profile-img">
+    <%= cl_image_tag(@users.img_url.key, width: "200px", height: "200px") %>
+  </div>
+
   <%= link_to "edit", profile_edit_path(@users.id) %>
   <h1>name: <%= @users.first_name %> <%= @users.last_name %> </h1>
   <h1>username: <%= @users.username %></h1>
   <h1>gender: <%= @users.gender %></h1>
   <h1>age: <%= @users.age %></h1>
-  <%= cl_image_tag(@users.img_url.key) %>
+
 </div>

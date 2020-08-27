@@ -2,7 +2,7 @@
     <% @listings.each do %>
     <% |listing| %>
     <div class="card-trip">
-        <%=listing.img_url.attached? ?  cl_image_tag(listing.img_url[0].key, :width=>630, :height=>200,) : image_tag("download.png") %>
+        <%=listing.img_url.attached? ?  cl_image_tag(listing.img_url[0].key, width: 630, height: 200) : image_tag("download.png") %>
         <div class="card-trip-infos">
             <div>
                 <h2>
