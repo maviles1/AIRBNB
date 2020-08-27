@@ -1,18 +1,51 @@
 <div class="container">
-  <h1>Let's make a simple form. Check Schema. Here we need following:</h1>
-  <h3>Tell @user more about your trip</h3>
-  <h4>Textbox with Offer details, Hi my name is bla bla bla and I'm coming with my family</h4>
-  Confirm button!!. Start below this line.
-  <hr>
-
-
-
-
-
-
-
-
-
-
-
+    <!-- breathe -->
+    <!-- breathe -->
+    <div class="offer">
+        <div class="submit-container">
+            <div class="offer-image-container">
+                <img class="offer-img" src="https://avatars0.githubusercontent.com/u/65114161?v=4" alt="First slide">
+            </div>
+            <div class="offer-info-container">
+                <!-- i'm working on the line below -->
+                <div class="show-info-title">
+                    <h5 class="show-info-owner">Our captain, <a href="#">Gonzalo</a>, will be excited to have you on board! But before you confirm your booking, just one more step.</h5>
+                    <h6 class="show-info-owner">Please complete the below details to confirm your reservation.</h6><br>
+                    <form action= <%= create_offer_path(@listing)%> method: post >
+                        <label for="description">Description of your holiday:</label><br>
+                        <div class="description-container">
+                            <textarea class="text-offer" id="description" placeholder="Type a message"></textarea>
+                        <input for="" type="submit" class="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- breathe -->
+        </div>
+        <div class="show-flex-container">
+            <div class="resv-container">
+                <h6 class="show-info-owner">Total price for 6 days</h6>
+                <h6 class="show-info-owner-sm">(14/11/2020 - 10/11/2020)</h6>
+                <h5 class="show-info-owner">$644 USD</h5>
+            </div>
+            <div class="edit-container">
+                <div class="edit-buttons">
+                    <a href="javascript:history.back()">
+                        <i class="fas fa-arrow-left"></i>
+                        <h6 class="show-info-owner">Back to preview page page</h6>
+                    </a>
+                </div>
+                <div class="confirm-buttons">
+                    <a href="<%= make_offer_path %>">
+                        <i class="fas fa-check-circle"></i>
+                        <h6 class="show-info-owner">Confirm</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- breathe -->
+        <!-- breathe -->
+    </div>
+    <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>

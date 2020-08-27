@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_141437) do
     t.string "description"
     t.bigint "listing_id"
     t.bigint "user_id"
-    t.string "start_date"
-    t.string "end_date"
+    t.string "start_date" #need
+    t.string "end_date" #need
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
