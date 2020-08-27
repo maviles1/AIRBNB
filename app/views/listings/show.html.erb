@@ -11,14 +11,13 @@
                 <div id="carousel1" class="card-trip carousel slide" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://eskipaper.com/images/yacht-2.jpg" alt="First slide">
+                            <%= cl_image_tag(@listing.img_urls[0].key, class: "d-block w-100 offer-img", height: "200px") %>
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://blogs.forbes.com/billspringer/files/2019/03/00000510_2-1.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://www.heesenyachts.com/wp-content/uploads/2019/09/19255-Pollux-ext-1.jpg" alt="Third slide">
-                        </div>
+                        <% @listing.img_urls[1..-1].each do |picture| %>
+                          <div class="carousel-item">
+                             <%= cl_image_tag(picture.key, class: "d-block w-100 offer-img" , height: "200px")  %>
+                          </div>
+                        <% end %>
                     </div>
                     <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
