@@ -48,11 +48,6 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
-  def show_offers
-    @listing = Listing.find(params[:id])
-    @offers = @listing.offers
-  end
-
   private
 
   def strong_params

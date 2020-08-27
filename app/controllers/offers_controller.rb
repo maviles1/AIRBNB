@@ -38,6 +38,16 @@ class OffersController < ApplicationController
     redirect_to :root
   end
 
+  def accept
+    @offer = Offer.find(params[:offer_id])
+    @offer.status = true;
+  end
+
+  def decline
+    @offer = Offer.find(params[:offer_id])
+    @offer.status = false;
+  end
+
   private
 
   def strong_params
