@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   delete '/listings/:id/offers/:offer_id', to: "offers#destroy"
   get '/offers/:id/edit', to: "offers#edit"
   patch '/offers/:id', to: "offers#update"
-  patch 'listings/:id/offers/offer_id/accept', to: "offers#accept", as: "offer_accept"
-  patch 'listings/:id/offers/offer_id/decline', to: "offers#decline", as: "offer_decline"
+  patch 'listings/:id/offers/:offer_id/accept', to: "offers#accept", as: "offer_accept"
+  patch 'listings/:id/offers/:offer_id/decline', to: "offers#decline", as: "offer_decline"
 
   get '/users/:id', to: "users#show", as: "profile"
   get '/users/:id/edit', to: "users#show", as: "profile_edit"
