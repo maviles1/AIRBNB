@@ -34,7 +34,7 @@
             <div class="show-info-container">
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Owner name:</h6>
-                    <h5 class="show-info-owner">
+             `       <h5 class="show-info-owner">
                         <%= @listing  .user.first_name %>
                         <%= @listing  .user.last_name %>
                     </h5>
@@ -62,8 +62,10 @@
                     <h6 class="show-info-owner">Edit these details</h6>
                 </div>
                 <div class="confirm-buttons">
-                    <i class="fas fa-check-circle"></i>
-                    <h6 class="show-info-owner">Proceed to payment</h6>
+                    <a href="<%= @MARTIN_INSERT_PATH %>">
+                        <i class="fas fa-check-circle"></i>
+                        <h6 class="show-info-owner">Next step</h6>
+                    </a>
                 </div>
             </div>
         </div>
