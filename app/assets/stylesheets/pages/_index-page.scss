@@ -1,0 +1,35 @@
+.container-index {
+    margin-top: 70px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-listings-div {
+    width: 100%;
+}
+
+.flex-map-div {
+    width: 100%;
+    padding: 15px 15px 0 0;
+    flex: auto;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 975;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 600px;
+    font-size: 12px;
+    background-color: orange;
+}
+
+.mapboxgl-map {
+    min-height: 500px;
+    width: 100%;
+    height: 600px;
+    top: 0;
+    align-self: flex-start;
+}
