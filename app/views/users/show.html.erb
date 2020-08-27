@@ -1,12 +1,31 @@
-<div class="container">
-  <div id="profile-img">
-    <%= cl_image_tag(@users.img_url.key, width: "200px", height: "200px") %>
+<div id="profile-show">
+  <div id="profile">
+    <div id="profile_img">
+      <%= cl_image_tag(@users.img_url.key, class: "avatar-profile") %>
+    </div>
+    <br>
+    <div id="profile-details">
+      <h1><%= @users.first_name %> <%= @users.last_name %> </h1>
+      <h4>username: <%= @users.username %></h4>
+      <br>
+      <h5>Gender: <%= @users.gender %></h5>
+      <h5>Age: <%= @users.age %></h5>
+      <br>
+      <%= button_to "edit", profile_edit_path(@users.id), { class: "btn" } %>
+    </div>
   </div>
-
-  <%= link_to "edit", profile_edit_path(@users.id) %>
-  <h1>name: <%= @users.first_name %> <%= @users.last_name %> </h1>
-  <h1>username: <%= @users.username %></h1>
-  <h1>gender: <%= @users.gender %></h1>
-  <h1>age: <%= @users.age %></h1>
-
+  <div id="existing">
+    <div id="existing-listings">
+      <h2>Your listings</h2>
+      <% @user.listings.each do %>
+        <% |listing| %>
+        <%= listing.title %>
+        <%= listing.description %>
+        <%= listing.img_url %>
+      <% end %>
+    </div>
+    <div id="existing-bookings">
+      <h2>Your bookings</h2>
+    </div>
+  </div>
 </div>
