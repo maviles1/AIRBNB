@@ -53,6 +53,23 @@ object-fit: cover;
     margin: 12px 0px;
 }
 
+.confirm-buttons-new:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f058";
+  display: flex;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  color: #81b214;
+  }
+
+#confirm {
+  border: none;
+  background-color: transparent;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  color: #81b214;
+}
+
 .text-offer {
     -webkit-box-flex: 1;
     color: inherit;
