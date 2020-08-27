@@ -1,0 +1,37 @@
+#profile-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  height: 560px;
+  width: 800px;
+  margin-top: 100px;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-details{
+  display: flex;
+  flex-direction: column;
+}
+
+#existing {
+  display: flex;
+  flex-direction: column;
+}
+
+#existing-listings {
+  display: flex;
+  flex-direction: column;
+}
+
+#existing-bookings {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,10 +1,20 @@
 <div class="container">
-  <%= link_to "edit", profile_edit_path(@users.id) %>
-  <h1>name: <%= @users.first_name %> <%= @users.last_name %> </h1>
-  <h1>username: <%= @users.username %></h1>
-  <h1>gender: <%= @users.gender %></h1>
-  <h1>age: <%= @users.age %></h1>
-  <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
-  <%= link_to "show my listings", user_listings_path %>
-  <%= link_to "show my offers", user_offers_path %>
+<div id="profile-show">
+  <div id="profile">
+    <div id="profile_img">
+      <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+    </div>
+    <br>
+    <div id="profile-details">
+      <h1><%= @users.first_name %> <%= @users.last_name %> </h1>
+      <h4>username: <%= @users.username %></h4>
+      <br>
+      <h5>Gender: <%= @users.gender %></h5>
+      <h5>Age: <%= @users.age %></h5>
+      <br>
+      <%= button_to "edit", profile_edit_path(@users.id), { class: "btn" } %>
+        <%= link_to "show my listings", user_listings_path %>
+        <%= link_to "show my offers", user_offers_path %>
+    </div>
+  </div>
 </div>
