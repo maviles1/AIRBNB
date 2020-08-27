@@ -35,8 +35,13 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+
+
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+window.dispatchEvent(new Event('resize'));
