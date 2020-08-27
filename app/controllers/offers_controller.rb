@@ -8,6 +8,7 @@ class OffersController < ApplicationController
   end
 
   def new
+    @listing = Listing.find(params[:id])
     @offer = Offer.new()
   end
 
