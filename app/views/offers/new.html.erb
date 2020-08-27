@@ -4,20 +4,17 @@
     <div class="offer">
         <div class="submit-container">
             <div class="offer-image-container">
-                <img class="offer-img" src="https://avatars0.githubusercontent.com/u/65114161?v=4" alt="First slide">
+                <%= cl_image_tag(@listing.user.img_url.key, class: "offer-img") %>
             </div>
             <div class="offer-info-container">
                 <!-- i'm working on the line below -->
                 <div class="show-info-title">
-                    <h5 class="show-info-owner">Our captain, <a href="#">Gonzalo</a>, will be excited to have you on board! But before you confirm your booking, just one more step.</h5>
+                    <h5 class="show-info-owner">Our captain, <a href="#"><%= @listing.user.first_name %> </a>, will be excited to have you on board! But before you confirm your booking, just one more step.</h5>
                     <h6 class="show-info-owner">Please complete the below details to confirm your reservation.</h6><br>
-                    <form action= <%= create_offer_path(@listing)%> method: post >
-                        <label for="description">Description of your holiday:</label><br>
-                        <div class="description-container">
-                            <textarea class="text-offer" id="description" placeholder="Type a message"></textarea>
-                        <input for="" type="submit" class="submit">
-                        </div>
-                    </form>
+                    <%= simple_form_for @offer do |f| %>
+                        <%= f.input :description, label: 'Your description', error: 'description is mandatory, please specify one' %>
+                        <%= f.button :submit %>
+                      <% end %>
                 </div>
             </div>
             <!-- breathe -->
