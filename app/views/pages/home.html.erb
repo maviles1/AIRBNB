@@ -3,7 +3,7 @@
         <h1 class="pitch-text">Plan your next <br> holiday at sea.</h1>
         <form class="form-box" action=<%= listings_path %>>
             <input class="form-field" type="text" id="fname" name="fname" placeholder="Destination">
-            <input class="form-field" type="date" id="checkin" name="lname" placeholder="Check-in Date">
+            <input class="form-field" type="date" id="checkin" min="<%= Time.now.strftime("%Y/%m/%d") %>" name="datemin" placeholder="Check-in Date">
             <input class="form-field" type="date" id="checkout" name="lname" placeholder="Check-out Date">
             <button class="search-btn" href="<%= listings_path %>" ><img width="30%" src="https://static.thenounproject.com/png/9509-200.png" alt="magnifying glass"></button>
         </form>
