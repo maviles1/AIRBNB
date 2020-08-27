@@ -57,6 +57,6 @@ class ListingsController < ApplicationController
   private
 
   def strong_params
-    params.require(:listing).permit(:description, :title, :address, img_urls: [])
+    params.require(:listing).permit(:description, :title, :address, :price, img_urls: [])
   end
 end

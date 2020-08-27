@@ -3,7 +3,7 @@
     <!-- breathe -->
     <div class="offer">
         <h1 class="title">
-            <%= @listing.title %>, <em>Located in St. Tropez</em>
+            <%= @listing.title %>, <em>Location: <%= @listing.location %></em>
         </h1>
         <div class="show-flex-container">
             <!-- breathe -->
@@ -33,13 +33,13 @@
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Owner name:</h6>
              `       <h5 class="show-info-owner">
-                        <%= @listing  .user.first_name %>
-                        <%= @listing  .user.last_name %>
+                        <%= @listing.user.first_name %>
+                        <%= @listing.user.last_name %>
                     </h5>
                 </div>
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Price per day:</h6>
-                    <h5 class="show-info-owner">$99</h5>
+                    <h5 class="show-info-owner">$<%= @listing.price %> </h5>
                 </div>
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Cleaning Fees:</h6>
