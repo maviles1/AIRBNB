@@ -1,20 +1,23 @@
 <div class="container">
-<div id="profile-show">
-  <div id="profile">
-    <div id="profile_img">
-      <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+<div id="profile">
+  <div id="profile-card">
+    <div>
+      <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key)  : image_tag("blank-profile-picture-973460_1280.jpg")%>
     </div>
     <br>
     <div id="profile-details">
       <h1><%= @users.first_name %> <%= @users.last_name %> </h1>
-      <h4>username: <%= @users.username %></h4>
+      <span>username: <%= @users.username %></span>
+      <span>email: <%= @users.email %></span>
       <br>
-      <h5>Gender: <%= @users.gender %></h5>
-      <h5>Age: <%= @users.age %></h5>
+      <span>Gender: <%= @users.gender %></span>
+      <span>Age: <%= @users.age %></span>
       <br>
-      <%= button_to "edit", profile_edit_path(@users.id), { class: "btn" } %>
-        <%= link_to "show my listings", user_listings_path %>
-        <%= link_to "show my offers", user_offers_path %>
+      <div id="profile-btns">
+        <%= link_to "EDIT PROFILE", profile_edit_path(@users.id), { class: "profile-btn" } %>
+        <%= link_to "LISTINGS", user_listings_path, { class: "profile-btn" } %>
+        <%= link_to "OFFERS", user_offers_path, { class: "profile-btn" } %>
+      </div>
     </div>
   </div>
 </div>
