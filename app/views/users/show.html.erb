@@ -4,7 +4,7 @@
   <h1>username: <%= @users.username %></h1>
   <h1>gender: <%= @users.gender %></h1>
   <h1>age: <%= @users.age %></h1>
-  <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url[0].key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+  <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
   <%= link_to "show my listings", user_listings_path %>
   <%= link_to "show my offers", user_offers_path %>
 </div>
