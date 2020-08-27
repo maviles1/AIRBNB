@@ -14,6 +14,18 @@
    email:Faker::Internet.email,
    first_name:Faker::Name.first_name,
    last_name:Faker::Name.last_name,
-   img_url: "https://source.unsplash.com/collection/4492634"
+   img_url: "https://source.unsplash.com/collection/1602384"
+    )
+end
+
+10.times do
+  Listing.create(
+    user_id:Faker::IDNumber.valid,
+    description:Faker::Vehicle.year,
+    title:Faker::Vehicle.make,
+    img_url:"https://source.unsplash.com/collection/4492634",
+    address:Faker::Address.street_name,
+    latitude:Faker::Address.latitude,
+    longitude:Faker::Address.longitude,
     )
 end
