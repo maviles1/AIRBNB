@@ -3,7 +3,6 @@
     <!-- breathe -->
     <div class="offer">
         <h1 class="title">
-          <%= link_to "make offer", make_offer_path %>
             <%= @listing.title %>, <em>Located in St. Tropez</em>
         </h1>
         <div class="show-flex-container">
@@ -62,7 +61,8 @@
                     <h6 class="show-info-owner">Edit these details</h6>
                 </div>
                 <div class="confirm-buttons">
-                    <a href="<%= @MARTIN_INSERT_PATH %>">
+
+                    <a href="<%= make_offer_path %>">
                         <i class="fas fa-check-circle"></i>
                         <h6 class="show-info-owner">Next step</h6>
                     </a>
