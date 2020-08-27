@@ -1,7 +1,8 @@
+<div class="container">
 <div id="profile-show">
   <div id="profile">
     <div id="profile_img">
-      <%= cl_image_tag(@users.img_url.key, class: "avatar-profile") %>
+      <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, :width=>630, :height=>200, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
     </div>
     <br>
     <div id="profile-details">
@@ -12,20 +13,8 @@
       <h5>Age: <%= @users.age %></h5>
       <br>
       <%= button_to "edit", profile_edit_path(@users.id), { class: "btn" } %>
-    </div>
-  </div>
-  <div id="existing">
-    <div id="existing-listings">
-      <h2>Your listings</h2>
-      <% @user.listings.each do %>
-        <% |listing| %>
-        <%= listing.title %>
-        <%= listing.description %>
-        <%= listing.img_url %>
-      <% end %>
-    </div>
-    <div id="existing-bookings">
-      <h2>Your bookings</h2>
+        <%= link_to "show my listings", user_listings_path %>
+        <%= link_to "show my offers", user_offers_path %>
     </div>
   </div>
 </div>

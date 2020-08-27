@@ -1,12 +1,13 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.geocoded
-    @markers = @listings.map do |listing|
-      {
-        lat: listing.latitude,
-        lng: listing.longitude
-      }
-    end
+    # @listings = Listing.geocoded
+    # @markers = @listings.map do |listing|
+    #   {
+    #     lat: listing.latitude,
+    #     lng: listing.longitude
+    #   }
+    # end
+    @listings = Listing.all
   end
 
   def show
