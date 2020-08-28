@@ -1,15 +1,9 @@
 <div class="container">
   <% @offers.each do |offer| %>
-
-
     <h1><%= offer.user.username %> </h1>
     <p><%= offer.description %> </p>
     <%= link_to "user", profile_path(offer.user)%>
-    <%= link_to "accept", offer_accept_path(offer.listing, offer)%>
-    <%= link_to "reject", offer_decline_path(offer.listing, offer)%>
-
-
-
-
+    <%= link_to "accept", offer_accept_path(offer.listing, offer), method: :patch%>
+    <%= link_to "reject", offer_decline_path(offer.listing, offer, method: :patch)%>
   <% end %>
 </div>

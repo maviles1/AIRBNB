@@ -3,6 +3,8 @@
     <!-- breathe -->
     <div class="offer">
 <%= simple_form_for [@listing, @offer] do |f| %>
+<%= hidden_field_tag(:start_date, session[:datemin]) %>
+<%= hidden_field_tag(:end_date, session[:datemax]) %>
         <div class="submit-container">
             <div class="offer-image-container">
                 <%= cl_image_tag(@listing.user.img_url.key, class: "offer-img") %>
@@ -12,17 +14,17 @@
                 <div class="show-info-title">
                     <h5 class="show-info-owner">Our captain, <a href="#"><%= @listing.user.first_name %> </a>, will be excited to have you on board! But before you confirm your booking, just one more step.</h5>
                     <h6 class="show-info-owner">Please complete the below details to confirm your reservation.</h6><br>
-                        <label for="description">Description of your holiday:</label><br>
-                          <%= f.input :description, input_html: {class: "text-offer description-container", placeholder: "Type your message"} %>
+                      <label for="description">Description of your holiday:</label><br>
+                      <%= f.input :description, input_html: {class: "text-offer description-container", placeholder: "Type your message"} %>
                 </div>
             </div>
             <!-- breathe -->
         </div>
         <div class="show-flex-container">
             <div class="resv-container">
-                <h6 class="show-info-owner">Total price for <%= (Date.parse(params[:datemax]) - Date.parse(params[:datemin])).to_i %> days</h6>
-                <h6 class="show-info-owner-sm">(<%= params[:datemin] %> - <%= params[:datemax] %>)</h6>
-                <h5 class="show-info-owner">$<%= (Date.parse(params[:datemax]) - Date.parse(params[:datemin])).to_i * @listing.price %> USD</h5>
+                <h6 class="show-info-owner">Total price for <%= (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i %> days</h6>
+                <h6 class="show-info-owner-sm">(<%= session[:datemin] %> - <%= session[:datemax] %>)</h6>
+                <h5 class="show-info-owner">$<%= (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i * @listing.price %> USD</h5>
             </div>
             <div class="edit-container">
                 <div class="edit-buttons">
