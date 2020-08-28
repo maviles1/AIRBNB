@@ -2,7 +2,6 @@
   <% @offers.each do |offer| %>
 
 
-
     <h1><%= offer.user.username %> </h1>
     <p><%= offer.description %> </p>
     <%= link_to "user", profile_path(offer.user)%>

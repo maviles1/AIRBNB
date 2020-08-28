@@ -3,11 +3,11 @@
     <div id="carousel<%= i %>" class="card-trip carousel slide" data-interval="false">
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag(listing.img_urls[0].key, class: "d-block w-100 offer-img", height: "200px") %>
+              <%= cl_image_tag(listing.img_urls[0].key, class: "home-carousel-img", height: "200px") %>
               </div>
                 <% listing.img_urls[1..-1].each do |picture| %>
                 <div class="carousel-item">
-                  <%= cl_image_tag(picture.key, class: "d-block w-100 offer-img" , height: "200px")  %>
+                  <%= cl_image_tag(picture.key, class: "home-carousel-img" , height: "200px")  %>
                 </div>
                 <% end %>
               </div>
