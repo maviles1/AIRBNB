@@ -2,8 +2,8 @@
     <div class="container">
         <div id="profile">
             <div id="profile-card">
-                <div>
-                    <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key)  : image_tag("blank-profile-picture-973460_1280.jpg")%>
+                <div class="user-image">
+                    <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key, class: "userimg")  : image_tag("blank-profile-picture-973460_1280.jpg")%>
                 </div>
                 <br>
                 <div id="profile-details">

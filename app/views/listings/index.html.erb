@@ -13,15 +13,11 @@
                             <p>
                                 <%= listing.description %>
                             </p>
-                            <%= link_to "More details", listing_path(listing.id, params[:datemin], params[:datemax]) %>
+                            <%= link_to "Book this boat", listing_path(listing.id, params[:datemin], params[:datemax]) %>
                         </div>
                         <div class="index-listing-spec">
-                            <p>
-                                Verified availability <i style="color: blue" class="fas fa-check-circle"></i>
-                            </p>
-                            <p>
-                                <%= params[:datemin] %> - <%= params[:datemax] %>
-                            </p>
+                            <p>Verified availability <i style="color: blue" class="fas fa-check-circle"></i></p>
+                            <p><%= params[:datemin] %> - <%= params[:datemax] %></p>
                             <p>Total Price: <strong> <%= (Date.parse(params[:datemax]) - Date.parse(params[:datemin])).to_i * listing.price %>$</strong></p>
                         </div>
                     </div>
@@ -31,11 +27,14 @@
             </div>
             <% end %>
         </div>
-        <% if @listings.length >= 1 %>
+
         <div class="flex-map-div">
+        <% if @listings.length >= 1 %>
             <div id="map" style='height: 600px; width: 65vw;' data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="mapboxgl-map">
             </div>
             <% end %>
         </div>
+
+
     </div>
 </div>

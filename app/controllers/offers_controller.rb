@@ -14,7 +14,6 @@ class OffersController < ApplicationController
   end
 
   def create
-    raise
     @offer = Offer.new(strong_params)
     @offer.listing_id = params[:id]
     @offer.user = current_user
