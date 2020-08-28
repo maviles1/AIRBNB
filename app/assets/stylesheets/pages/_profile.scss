@@ -7,7 +7,6 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgrey;
     border-radius: 25px;
-    height: 560px;
     width: 400px;
     margin-top: 50px;
     margin-left: 50px;
@@ -43,8 +42,16 @@
 }
 
 .profile-body {
+  text-align: center;
     padding-top: 30px;
     background-image: url("https://res.cloudinary.com/dppxl8tt2/image/upload/v1598541416/sea-14_apj3ak.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.userimg {
+max-width:100%;
+max-height:100%;
+}
+
+
