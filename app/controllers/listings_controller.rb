@@ -8,6 +8,10 @@ class ListingsController < ApplicationController
     #   }
     # end
     @listings = Listing.available_for(params[:datemin], params[:datemax])
+    if params[:datemin].present? && params[:datemax].present?
+      session[:datemin] = params[:datemin]
+      session[:datemax] = params[:datemax]
+    end
   end
 
   def show
