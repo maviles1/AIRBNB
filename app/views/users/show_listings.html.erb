@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>my listings</h1>
+  <h1>Hi, <em><%=@user.username%></em>, these are your active listings!</h1>
   <% @listings.each do |listing| %>
     <div class="card-trip">
-            <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key) : image_tag("download.png") %>
+            <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key, :className=>"samples") : image_tag("download.png")  %>
             <div class="card-trip-infos">
                 <div>
                     <h2>
@@ -10,7 +10,7 @@
                     </h2>
                     <p>
                         <%= listing.description %>
-                    </p>
+
                     <%= link_to "show", listing_path(listing) %>
                     <%= link_to "delete", listing_delete_path(listing), method: "delete" %>
                     <%= link_to "offers", listing_offers_path(listing) %>
