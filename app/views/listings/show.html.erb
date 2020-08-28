@@ -3,20 +3,21 @@
     <!-- breathe -->
     <div class="offer">
         <h1 class="title">
-            <%= @listing.title %>, <em>Location: <%= @listing.address %></em>
+            <%= @listing.title %>, <em>Location:
+                <%= @listing.address %></em>
         </h1>
         <div class="show-flex-container">
             <!-- breathe -->
             <div class="show-image-container">
                 <div id="carousel1" class="card-trip carousel slide" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <%= cl_image_tag(@listing.img_urls[0].key, class: "d-block w-100 offer-img", height: "200px") %>
+                    <div class="carousel-inner-a">
+                        <div class="">
+                            <%= cl_image_tag(@listing.img_urls[0].key, class: "d-block w-100 1offer-img", height: "200px") %>
                         </div>
                         <% @listing.img_urls[1..-1].each do |picture| %>
-                          <div class="carousel-item">
-                             <%= cl_image_tag(picture.key, class: "d-block w-100 offer-img" , height: "200px")  %>
-                          </div>
+                        <div class="carousel-item">
+                            <%= cl_image_tag(picture.key, class: "d-block w-100 1offer-img" , height: "200px")  %>
+                        </div>
                         <% end %>
                     </div>
                     <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
@@ -32,27 +33,30 @@
             <div class="show-info-container">
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Owner name:</h6>
-             `       <h5 class="show-info-owner">
+                     <h5 class="show-info-owner">
                         <%= @listing.user.first_name %>
                         <%= @listing.user.last_name %>
                     </h5>
                 </div>
                 <div class="show-info-title">
                     <h6 class="show-info-owner">Price per day:</h6>
-                    <h5 class="show-info-owner">$<%= @listing.price %> </h5>
+                    <h5 class="show-info-owner">$
+                        <%= @listing.price %>
+                    </h5>
                 </div>
-                <div class="show-info-title">
-                    <h6 class="show-info-owner">Cleaning Fees:</h6>
-                    <h5 class="show-info-owner">$50</h5>
-                </div>
+
             </div>
             <!-- breathe -->
         </div>
         <div class="show-flex-container">
             <div class="resv-container">
-                <h6 class="show-info-owner">Total price for <%= (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i %> days</h6>
-                <h6 class="show-info-owner-sm">(<%= session[:datemin] %> - <%= session[:datemax] %>)</h6>
-                <h5 class="show-info-owner"><%=   (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i * @listing.price %> USD</h5>
+                <h6 class="show-info-owner">Total price for
+                    <%= (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i %> days</h6>
+                <h6 class="show-info-owner-sm">(
+                    <%= session[:datemin] %> -
+                    <%= session[:datemax] %>)</h6>
+                <h5 class="show-info-owner">
+                    <%=   (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i * @listing.price %> USD</h5>
             </div>
             <div class="edit-container">
                 <div class="edit-buttons">
@@ -62,7 +66,6 @@
                     </a>
                 </div>
                 <div class="confirm-buttons">
-
                     <a href="<%= make_offer_path %>">
                         <i class="fas fa-arrow-right"></i>
                         <h6 class="show-info-owner">Next step</h6>
@@ -73,6 +76,5 @@
         <!-- breathe -->
         <!-- breathe -->
     </div>
-    <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+</div>
 </div>

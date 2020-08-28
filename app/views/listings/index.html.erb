@@ -2,38 +2,39 @@
     <div class="flex-container">
         <div class="flex-listings-div">
             <% @listings.each do |listing| %>
-
-
-
-
             <div class="card-trip" style="border-radius: 15px;">
                 <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key) : image_tag("download.png") %>
                 <div class="card-trip-infos" style="border-radius: 15px;">
-                    <div class="index-listing-title">
-                        <h2>
-                            <%= listing.title %>
-                        </h2>
-                        <p>
-                            <%= listing.description %>
-                        </p>
-                        <%= link_to "show", listing_path(listing.id) %>
+                    <div class="flex-listing-det">
+                        <div class="index-listing-title">
+                            <h2>
+                                <%= listing.title %>
+                            </h2>
+                            <p>
+                                <%= listing.description %>
+                            </p>
+                            <%= link_to "Book this boat", listing_path(listing.id, params[:datemin], params[:datemax]) %>
+                        </div>
+                        <div class="index-listing-spec">
+                            <p>Verified availability <i style="color: blue" class="fas fa-check-circle"></i></p>
+                            <p><%= params[:datemin] %> - <%= params[:datemax] %></p>
+                            <p>Total Price: <strong> <%= (Date.parse(params[:datemax]) - Date.parse(params[:datemin])).to_i * listing.price %>$</strong></p>
+                        </div>
                     </div>
                     <h2 class="card-trip-pricing"></h2>
                     <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
                 </div>
             </div>
-
-
-
-
-
             <% end %>
         </div>
-        <% if @listings.length >= 1 %>
+
         <div class="flex-map-div">
-            <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="mapboxgl-map">
+        <% if @listings.length >= 1 %>
+            <div id="map" style='height: 600px; width: 65vw;' data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="mapboxgl-map">
             </div>
-        <% end %>
+            <% end %>
         </div>
+
+
     </div>
 </div>

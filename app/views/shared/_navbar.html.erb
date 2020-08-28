@@ -1,14 +1,19 @@
 <div id="navbar" class="navbar-gfr">
-    <div class="navbar-left"><a href="/"><img class="logo" src="https://i.ibb.co/vJfV1PG/logo.png" alt="logo"></a> </div>
-    <div class="navbar-text"><%= link_to "Are you a boat owner? Create new listing!", new_listing_path(params[:datemin], params[:datemax]) %></div>
+    <div class="navbar-left">
+        <a href="/">
+            <i style="font-size: 40px; color: #ff5722;" class="fas fa-anchor"></i>
+        </a>
+    </div>
+    <div class="navbar-text">
+        <%= link_to "Are you a boat owner? Create new listing!", new_listing_path %>
+    </div>
     <div class="navbar-right">
-
-      <% if current_user == nil%>
+        <% if current_user == nil%>
         <a class="btn btn-primary" href='/users/sign_in'>Login</a>
         <a class="btn btn-primary" href='/users/sign_up'>New User</a>
-      <% else %>
-        <a class="btn btn-primary" href=<%= profile_path(current_user.id) %>>Profile</a>
+        <% else %>
+        <a class="btn btn-primary" href=<%=profile_path(current_user.id) %>>Profile</a>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn bt-primary" %>
-      <% end %>
+        <% end %>
     </div>
 </div>

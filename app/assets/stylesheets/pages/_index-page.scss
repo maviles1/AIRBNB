@@ -8,14 +8,13 @@
 }
 
 .flex-listings-div {
-    // width: 100%;
+    width: 40%;
 }
 
 .flex-map-div {
-    // width: 100%;
     padding: 15px 15px 0 0;
     flex: auto;
-    width: 100%;
+    width: 60%;
     position: sticky;
     top: 0px;
     height: 600px;
@@ -40,4 +39,17 @@
     // align-self: flex-start;
 }
 
+.flex-listing-det {
+  display: flex;
+  flex-direction: horizontal;
+}
+
+.index-listing-title {
+  text-align: left;
+}
+
+.index-listing-spec {
+  text-align: left ;
+  padding-left: 50px;
+}
 
