@@ -18,7 +18,7 @@
                         <div class="index-listing-spec">
                             <p>Verified availability <i style="color: blue" class="fas fa-check-circle"></i></p>
                             <p><%= params[:datemin] %> - <%= params[:datemax] %></p>
-                            <p>Total Price: <strong> <%= (Date.parse(params[:datemax]) - Date.parse(params[:datemin])).to_i * listing.price %>$</strong></p>
+                            <p>Total Price: <strong> <%= session[:datemax].empty? ? "No date selected!" : (Date.parse(session[:datemax]) - Date.parse(session[:datemin])).to_i * listing.price %>$</strong></p>
                         </div>
                     </div>
                     <h2 class="card-trip-pricing"></h2>

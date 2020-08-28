@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  has_many :offers
+  has_many :offers, dependent: :destroy
   belongs_to :user
   has_many_attached :img_urls
   geocoded_by :address
