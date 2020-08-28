@@ -16,6 +16,8 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(strong_params)
     @offer.listing_id = params[:id]
+    @offer.start_date = session[:datemin]
+    @offer.start_date = session[:datemax]
     @offer.user = current_user
     @offer.save!
     redirect_to :root

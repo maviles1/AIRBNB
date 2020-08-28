@@ -7,10 +7,13 @@ class ListingsController < ApplicationController
         lng: listing.longitude
       }
     end
-    @listings = Listing.all
+
     if params[:datemin].present? && params[:datemax].present?
+      @listings = Listing.available_for(params[:datemin], params[:datemax])
       session[:datemin] = params[:datemin]
       session[:datemax] = params[:datemax]
+    else
+      @listings = Listing.all
     end
   end
 
