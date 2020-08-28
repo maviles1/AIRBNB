@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     #     lng: listing.longitude
     #   }
     # end
-    @listings = Listing.all
+    @listings = Listing.available_for(params[:datemin], params[:datemax])
   end
 
   def show
@@ -26,7 +26,6 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(strong_params)
     @listing.user = current_user
-        raise
     if @listing.save
       redirect_to listings_path
     else
