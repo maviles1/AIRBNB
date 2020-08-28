@@ -40,4 +40,17 @@
     // align-self: flex-start;
 }
 
+.flex-listing-det {
+  display: flex;
+  flex-direction: horizontal;
+}
+
+.index-listing-title {
+  text-align: left;
+}
+
+.index-listing-spec {
+  text-align: left;
+  padding-left: 100px;
+}
 
