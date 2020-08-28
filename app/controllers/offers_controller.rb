@@ -40,12 +40,14 @@ class OffersController < ApplicationController
   def accept
     @offer = Offer.find(params[:offer_id])
     @offer.status = true
+    @offer.save!
     redirect_to listing_offers_path(params[:id])
   end
 
   def decline
     @offer = Offer.find(params[:offer_id])
     @offer.status = false
+    @offer.save!
     redirect_to listing_offers_path(params[:id])
   end
 
