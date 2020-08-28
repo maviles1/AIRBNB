@@ -1,23 +1,30 @@
 <div class="container">
-  <h1>Hi, <em><%=@user.username%></em>, these are your active listings!</h1>
-  <% @listings.each do |listing| %>
+    <div class="form-box" style="text-align: center; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <h3>Hi <strong>
+                <%=@user.username.capitalize%></strong> ⛵️ these are your active listings!</h3>
+    </div>
+    <br>
+    <% @listings.each do |listing| %>
+
+
+
+
     <div class="card-trip">
-            <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key, :className=>"samples") : image_tag("download.png")  %>
-            <div class="card-trip-infos">
-                <div>
-                    <h2>
-                        <%= listing.title %>
-                    </h2>
-                    <p>
-                        <%= listing.description %>
-
-                    <%= link_to "show", listing_path(listing) %>
-                    <%= link_to "delete", listing_delete_path(listing), method: "delete" %>
-                    <%= link_to "offers", listing_offers_path(listing) %>
-                </div>
-                <h2 class="card-trip-pricing"></h2>
+        <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key, :className=>"samples") : image_tag("download.png")  %>
+        <div class="card-trip-infos">
+            <div>
+                <h2>
+                    <%= listing.title %>
+                </h2>
+                <p>
+                    <%= listing.description %>
+                    <br>
+                    <%= link_to "Show Listing", listing_path(listing), class: "btn btn-primary" %>
+                    <%= link_to "Delete", listing_delete_path(listing), class: "btn btn-primary", method: "delete" %>
+                    <%= link_to "Open Offers", listing_offers_path(listing), class: "btn btn-primary" %>
             </div>
+            <h2 class="card-trip-pricing"></h2>
         </div>
-  <% end %>
+    </div>
+    <% end %>
 </div>
-

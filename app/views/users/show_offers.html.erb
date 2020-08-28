@@ -4,6 +4,9 @@
           <%=offer.listing.img_urls.attached? ?  cl_image_tag(offer.listing.img_urls[0].key, :width=>630, :height=>200,) : image_tag("download.png") %>
           <div class="card-trip-infos">
               <div>
+                  <h2>
+                      <%= offer.listing.title %>
+                  </h2>
                       <% if offer.status == true %>
                         <h2>
                           Accepted!
@@ -20,7 +23,7 @@
                   <p>
                       <%= offer.listing.description %>
                   </p>
-                  <%= link_to "show", listing_path(offer.listing.id) %>
+                  <%= link_to "show", listing_path(offer.listing.id), class: "btn btn-primary" %>
               </div>
               <h2 class="card-trip-pricing"></h2>
               <%=offer.listing.user.img_url.attached? ?  cl_image_tag(offer.listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
