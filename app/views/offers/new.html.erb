@@ -1,0 +1,44 @@
+<div class="container">
+    <!-- breathe -->
+    <!-- breathe -->
+    <div class="offer">
+<%= simple_form_for [@listing, @offer] do |f| %>
+        <div class="submit-container">
+            <div class="offer-image-container">
+                <%= cl_image_tag(@listing.user.img_url.key, class: "offer-img") %>
+            </div>
+            <div class="offer-info-container">
+                <!-- i'm working on the line below -->
+                <div class="show-info-title">
+                    <h5 class="show-info-owner">Our captain, <a href="#"><%= @listing.user.first_name %> </a>, will be excited to have you on board! But before you confirm your booking, just one more step.</h5>
+                    <h6 class="show-info-owner">Please complete the below details to confirm your reservation.</h6><br>
+                        <label for="description">Description of your holiday:</label><br>
+                          <%= f.input :description, input_html: {class: "text-offer description-container", placeholder: "Type your message"} %>
+                </div>
+            </div>
+            <!-- breathe -->
+        </div>
+        <div class="show-flex-container">
+            <div class="resv-container">
+                <h6 class="show-info-owner">Total price for 6 days</h6>
+                <h6 class="show-info-owner-sm">(14/11/2020 - 10/11/2020)</h6>
+                <h5 class="show-info-owner">$644 USD</h5>
+            </div>
+            <div class="edit-container">
+                <div class="edit-buttons">
+                    <a href="javascript:history.back()">
+                        <i class="fas fa-arrow-left"></i>
+                        <h6 class="show-info-owner">Back to preview page page</h6>
+                    </a>
+                </div>
+                <div class="confirm-buttons-new">
+                    <%= f.submit "Confirm", id: "confirm" %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <!-- breathe -->
+        <!-- breathe -->
+    </div>
+    </div>
+</div>

@@ -1,8 +1,23 @@
 <div class="container">
-  <%= link_to "edit", profile_edit_path(@users.id) %>
-  <h1>name: <%= @users.first_name %> <%= @users.last_name %> </h1>
-  <h1>username: <%= @users.username %></h1>
-  <h1>gender: <%= @users.gender %></h1>
-  <h1>age: <%= @users.age %></h1>
-  <%= cl_image_tag(@users.img_url.key) %>
+<div id="profile">
+  <div id="profile-card">
+    <div>
+      <%=@users.img_url.attached? ?  cl_image_tag(@users.img_url.key)  : image_tag("blank-profile-picture-973460_1280.jpg")%>
+    </div>
+    <br>
+    <div id="profile-details">
+      <h1><%= @users.first_name %> <%= @users.last_name %> </h1>
+      <span>username: <%= @users.username %></span>
+      <span>email: <%= @users.email %></span>
+      <br>
+      <span>Gender: <%= @users.gender %></span>
+      <span>Age: <%= @users.age %></span>
+      <br>
+      <div id="profile-btns">
+        <%= link_to "EDIT PROFILE", profile_edit_path(@users.id), { class: "profile-btn" } %>
+        <%= link_to "LISTINGS", user_listings_path, { class: "profile-btn" } %>
+        <%= link_to "OFFERS", user_offers_path, { class: "profile-btn" } %>
+      </div>
+    </div>
+  </div>
 </div>

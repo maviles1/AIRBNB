@@ -1,0 +1,50 @@
+#profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  height: 560px;
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#profile-details {
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.profile-btn {
+    opacity: 1;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 1px;
+    margin: 2px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+#profile-btns {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 25px;
+  padding: 5px;
+  width: 150px;
+}
+
+body {
+  background-image: url("https://res.cloudinary.com/dppxl8tt2/image/upload/v1598541416/sea-14_apj3ak.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+}

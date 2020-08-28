@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @offers = Offer.all
   end
@@ -8,6 +9,7 @@ class OffersController < ApplicationController
   end
 
   def new
+    @listing = Listing.find(params[:id])
     @offer = Offer.new()
   end
 
@@ -15,11 +17,8 @@ class OffersController < ApplicationController
     @offer = Offer.new(strong_params)
     @offer.listing_id = params[:id]
     @offer.user = current_user
-    if @offer.save
-      redirect_to :root
-    else
-      render :news
-    end
+    @offer.save!
+    redirect_to :root
   end
 
   def edit
@@ -36,6 +35,16 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     @offer.destroy
     redirect_to :root
+  end
+
+  def accept
+    @offer = Offer.find(params[:offer_id])
+    @offer.status = true;
+  end
+
+  def decline
+    @offer = Offer.find(params[:offer_id])
+    @offer.status = false;
   end
 
   private
