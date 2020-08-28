@@ -1,6 +1,7 @@
 
 require "open-uri"
-
+Listing.destroy_all
+User.destroy_all
 10.times  do
   User.create!(
     password:"password",
@@ -15,7 +16,7 @@ require "open-uri"
 end
 
 10.times do
-
+ran = (1..100).to_a
 file = URI.open('https://source.unsplash.com/collection/9964610')
  y= Listing.new(
     user:User.all.sample,
@@ -25,7 +26,7 @@ file = URI.open('https://source.unsplash.com/collection/9964610')
     latitude:Faker::Address.latitude,
     longitude:Faker::Address.longitude,
     )
-  y.img_url.attach(io: file, filename: "#{rand(1..100)}.png", content_type: 'image/png')
-  y.save
+  y.img_urls.attach(io: file, filename: "#{ran.sample}.png", content_type: 'image/png')
+  y.save!
 end
 
