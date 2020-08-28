@@ -1,22 +1,32 @@
-<div class="container">
-    <% @listings.each do %>
-    <% |listing| %>
-    <div class="card-trip">
-        <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key) : image_tag("download.png") %>
-        <div class="card-trip-infos">
-            <div>
-                <h2>
-                  <%= listing.title %>
-                </h2>
-                <p>
-                  <%= listing.description %>
-                </p>
-                <%= link_to "show", listing_path(listing.id) %>
+<div class="container-index" style="text-align: center;">
+    <div class="flex-container">
+        <div class="flex-listings-div">
+            <% @listings.each do %>
+            <% |listing| %>
+            <div class="card-trip" style="border-radius: 15px;">
+                <%=listing.img_urls.attached? ?  cl_image_tag(listing.img_urls[0].key) : image_tag("download.png") %>
+                <div class="card-trip-infos" style="border-radius: 15px;">
+                    <div>
+                        <h2>
+                            <%= listing.title %>
+                        </h2>
+                        <p>
+                            <%= listing.description %>
+                        </p>
+                        <%= link_to "show", listing_path(listing.id) %>
+                    </div>
+                    <h2 class="card-trip-pricing"></h2>
+                    <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+                </div>
             </div>
-            <h2 class="card-trip-pricing"></h2>
-            <%=listing.user.img_url.attached? ?  cl_image_tag(listing.user.img_url.key, class: "card-trip-user avatar-bordered") : image_tag("blank-profile-picture-973460_1280.jpg", class: "card-trip-user avatar-bordered") %>
+            <% end %>
+        </div>
+        <div class="flex-map-div">
+            <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="mapboxgl-map">
+            </div>
+            <div class="card-trip-infos">
+                <%= link_to "Are you a boat owner? Create new listing!", new_listing_path %>
+            </div>
         </div>
     </div>
-    <% end %>
 </div>
-<%= link_to "new listing", new_listing_path %>

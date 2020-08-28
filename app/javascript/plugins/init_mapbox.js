@@ -29,3 +29,7 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+window.dispatchEvent(new Event('resize'));
+
+
+
