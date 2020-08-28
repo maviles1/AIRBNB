@@ -1,13 +1,20 @@
 class ListingsController < ApplicationController
   def index
-     @listings = Listing.geocoded
-    @markers = @listings.map do |listing|
+    @listings_geo = Listing.geocoded
+    @markers = @listings_geo.map do |listing|
       {
         lat: listing.latitude,
         lng: listing.longitude
       }
     end
-    @listings = Listing.available_for(params[:datemin], params[:datemax])
+
+    if params[:datemin].present? && params[:datemax].present?
+      @listings = Listing.available_for(params[:datemin], params[:datemax])
+      session[:datemin] = params[:datemin]
+      session[:datemax] = params[:datemax]
+    else
+      @listings = Listing.all
+    end
   end
 
   def show

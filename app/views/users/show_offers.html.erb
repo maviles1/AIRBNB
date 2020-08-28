@@ -1,6 +1,5 @@
 <div class="container">
   <% @offers.each do |offer| %>
-    <h1><%= offer.status %></h1>
     <div class="card-trip">
           <%=offer.listing.img_urls.attached? ?  cl_image_tag(offer.listing.img_urls[0].key, :width=>630, :height=>200,) : image_tag("download.png") %>
           <div class="card-trip-infos">
@@ -8,6 +7,19 @@
                   <h2>
                       <%= offer.listing.title %>
                   </h2>
+                      <% if offer.status == true %>
+                        <h2>
+                          Accepted!
+                        </h2>
+                      <% elsif offer.status == false %>
+                        <h2>
+                          Declined
+                        </h2>
+                      <% else %>
+                         <h2>
+                          Pending...
+                        </h2>
+                      <% end %>
                   <p>
                       <%= offer.listing.description %>
                   </p>

@@ -16,6 +16,8 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(strong_params)
     @offer.listing_id = params[:id]
+    @offer.start_date = session[:datemin]
+    @offer.start_date = session[:datemax]
     @offer.user = current_user
     @offer.save!
     redirect_to :root
@@ -39,12 +41,16 @@ class OffersController < ApplicationController
 
   def accept
     @offer = Offer.find(params[:offer_id])
-    @offer.status = true;
+    @offer.status = true
+    @offer.save!
+    redirect_to listing_offers_path(params[:id])
   end
 
   def decline
     @offer = Offer.find(params[:offer_id])
-    @offer.status = false;
+    @offer.status = false
+    @offer.save!
+    redirect_to listing_offers_path(params[:id])
   end
 
   private
