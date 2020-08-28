@@ -1,7 +1,6 @@
 
 require "open-uri"
-Listing.destroy_all
-User.destroy_all
+
 10.times  do
   User.create!(
     password:"password",
@@ -20,8 +19,8 @@ ran = (1..100).to_a
 file = URI.open('https://source.unsplash.com/collection/9964610')
  y= Listing.new(
     user:User.all.sample,
-    description:Faker::Vehicle.year,
-    title:Faker::Vehicle.make,
+    description:Faker::Lorem.paragraph(sentence_count: 4),
+    title:Faker::FunnyName.two_word_name ,
     address:Faker::Address.street_name,
     latitude:Faker::Address.latitude,
     longitude:Faker::Address.longitude,
