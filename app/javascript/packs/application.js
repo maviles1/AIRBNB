@@ -37,4 +37,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
-window.dispatchEvent(new Event('resize'));
+

@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
         lng: listing.longitude
       }
     end
-   # @listings = Listing.all
+    @listings = Listing.available_for(params[:datemin], params[:datemax])
   end
 
   def show
