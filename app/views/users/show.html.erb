@@ -22,7 +22,6 @@
                         <%= @users.age %></span>
                     <br>
                     <div id="profile-btns">
-                        <%= link_to "EDIT PROFILE", profile_edit_path(@users.id), { class: "profile-btn" } %>
                         <%= link_to "LISTINGS", user_listings_path, { class: "profile-btn" } %>
                         <%= link_to "OFFERS", user_offers_path, { class: "profile-btn" } %>
                     </div>
